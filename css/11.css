@@ -1,0 +1,530 @@
+/*
+* @Author: Administrator
+* @Date:   2018-03-24 08:17:37
+* @Last Modified by:   Administrator
+* @Last Modified time: 2018-04-08 15:44:28
+*/
+body{
+	background: #f4f4f4;
+}
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+header{
+	width: 100%;
+	height: 4.7rem;
+	/* background: red; */
+	background: url('../img/screen.png') no-repeat center bottom,-webkit-linear-gradient(top, #344e8d, #5f94b4);
+	/* 添加图片，添加渐变色 */
+	background-size: contain;
+	/* 图片大小cover contain */
+	overflow: hidden;
+}
+.hengpi{
+	font-size: 0.2rem;
+	text-align: center;
+	line-height: 0.14rem;
+	margin-top: 0.18rem;
+	color: #ffffff;
+	font-weight: bold;
+	/* 字体加粗 */
+}
+.box{
+	width: 0.72rem;
+	height: 0.44rem;
+	/* background: #f1ab62; */
+	border-radius: 0.08rem;
+	margin-left: 0.08rem;
+	margin-top: 0.33rem;
+	overflow: hidden;
+}
+.box h2{
+	font-size: 0.12rem;
+	color: #fceedf;
+	text-align: center;
+	line-height: 0.16rem;
+	margin-top: 0.06rem;
+}
+.box h3{
+	font-size: 0.12rem;
+	color: #fceedf;
+	text-align: center;
+	line-height: 0.16rem;
+	/* margin-top: 0.06rem; */
+}
+.tempature{
+	font-size: 0.45rem;
+	line-height: 0.63rem;
+	color: #ffffff;
+	text-align: center;
+	margin-top: 0.04rem;
+	width: 0.09rem;
+	margin-left: 2.22rem;
+
+}
+.qing{
+	font-size: 0.2rem;
+	line-height: 0.38rem;
+	color: #ffffff;
+	text-align: center;
+
+}
+.er{
+	width: 0.62rem;
+	height: 0.2rem;
+	
+	margin: 0 auto;
+}
+.shidu{
+	font-size: 0.14rem;
+	line-height: 0.2rem;
+	color: #fefeff;
+	float: left;
+}
+.er span{
+	font-size: 0.11rem;
+	line-height: 0.2rem;
+	color: #fefeff;
+	float: right;
+	margin-left: 0.01rem; 
+}
+.anhao{
+	font-size: 0.16rem;
+	font-weight: normal;
+	color: #fefeff;
+	text-align: center;
+	line-height: 0.26rem;
+	margin-top:0.43rem; 
+}
+.tianqi{
+	width: 100%;
+	height: 1.02rem;
+	
+	overflow: hidden;
+	border-bottom:0.01rem solid #e4e4e4;
+	margin-bottom: 0.1rem;
+}
+.tianqi-box{
+	width: 4.61rem;
+	height: 0.5rem;
+
+	margin: 0 auto;
+	margin-top: 0.27rem;
+	/* 弹性布局 */
+	display: flex;
+}
+.today{
+	width: 2.3rem;
+	height: 0.5rem;
+	
+	border-right: 0.01rem solid #f0f0f0;
+}
+.tomorrow{
+	width: 2.3rem;
+	height: 0.5rem;
+	/* 内左填充 */
+	padding-left: 0.19rem;
+	
+
+	
+}
+.top{
+	width: 100%;
+	height: 0.16rem;
+	
+	margin-bottom: 0.02rem;
+	display: flex;
+	/* 弹性布局然后再两端对齐 */
+	justify-content: space-between;
+}
+.bottom{
+	width: 100%;
+	height: 0.32rem;
+
+	display: flex;
+	justify-content: space-between;
+}
+.text{
+	font-size: 0.13rem;
+	width: 0.34rem;
+	height: 0.16rem;
+	
+	color: #434343;
+}
+.wendu-box{
+	
+	height: 0.16rem;
+	
+	margin-right: 0.05rem;
+}
+.wendu-box span{
+	font-size: 0.11rem;
+	float: left;
+	color: #434343;
+}
+.bottom span{
+	font-size: 0.14rem;
+	color: #434343;
+	line-height: 0.32rem;
+}
+.bottom div{
+	width: 0.18rem;
+	height: 0.18rem;
+	
+	margin-top: 0.06rem;
+	margin-right: 0.22rem;
+	background: url('../img/0.png') no-repeat center;
+	background-size: cover;
+}
+.bottom .tu{
+	width: 0.18rem;
+	height: 0.18rem;
+	
+	margin-top: 0.06rem;
+	margin-right: 0.22rem;
+	background: url('../img/1.png') no-repeat center;
+	background-size: cover;
+}
+.hours{
+	width: 100%;
+	height: 1.36rem;
+	/* background: pink; */
+	/* 超出部分的设置(水平方向) 自动*/
+	overflow-x: auto;
+	border-bottom: 0.01rem solid #e4e4e4;
+	/* 页面中有不允许被占用的地方 */
+	padding-top:0.31rem; 
+	/* 解决填充后盒子变大的问题 */
+	box-sizing: border-box;
+}
+/* 去掉滑动条 */
+.hours::-webkit-scrollbar{
+	height: 0;
+}
+/* 父元素 容器 */
+.wrap{
+	/* width: 10rem; */
+	height: 0.77rem;
+	/* background: red; */
+	display: flex;
+}
+/* 子元素 项目 */
+.now{
+	width: 0.77rem;
+	height: 0.77rem;
+	/* background: yellow; */
+	/* 每个now并排的时候，会在一行内挤，所以shrink禁止元素缩小 */
+	flex-shrink: 0;
+	display: flex;
+	/* 给now中的项目换行 */
+	flex-wrap: wrap;
+	/* 主轴方向变为y轴.默认的为x 轴*/
+	flex-direction: column;
+	justify-content: space-between;
+}
+.now .now-time{
+	width: 100%;
+	font-size: 0.11rem;
+	color:#a599b2;
+	text-align: center;
+
+}
+.now .yueliang{
+	width: 0.21rem;
+	height: 0.21rem;
+	/* background: red; */
+	margin: 0 auto;
+	background: url('../img/8.png') no-repeat center;
+	background-size: cover;
+	
+}
+.now .now-wendu{
+	width: 100%;
+	font-size: 0.11rem;
+	color:#a599b2;
+	text-align: center;
+}
+.zhongjian{
+	width: 100%;
+	height: 3.91rem;
+	/* background: red; */
+	margin-top: 0.2rem;
+	border-top: 0.01rem solid #e4e4e4;
+	border-bottom: 0.01rem solid #e4e4e4;
+	padding-top: 0.25rem;
+	box-sizing: border-box;
+	/*使wrap能滑动 */
+	overflow-x: auto;
+
+}
+.wrap1{
+	/* width: 10rem; */
+	height:3.37rem;
+	/* background:green; */
+	display: flex;
+	/* flex-shrink: 0; */
+}
+/* 去掉活动条 */
+.zhongjian::-webkit-scrollbar{
+	height: 0;
+}
+.con{
+	width: 0.82rem;
+	height: 100%;
+	/* background: yellow; */
+	/* 禁止项目缩小 */
+	flex-shrink: 0;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.con_date{
+	width: 100%;
+	height: 0.14rem;
+	font-size: 0.09rem;
+	/* background: pink; */
+	text-align: center;
+	font-size: 0.09rem;
+	line-height: 0.14rem;
+}
+/*  .con-date span{
+	font-size: 0.09rem;
+	float: left;
+	这部没用所以用第一个孩子的左间距来解决
+	text-align: center;
+	line-height: 0.14rem;
+}
+.con-date span:first-child{
+	margin-left: 0.25rem;
+}  */
+.con_wea{
+	width: 100%;
+	/* height: 0.31rem;
+	background: red; */
+	/* margin-top: 0.06rem; */
+	font-size: 0.13rem;
+	text-align: center;
+	/* line-height: 0.31rem; */
+}
+.picH{
+	width: 0.22rem;
+	height: 0.22rem;
+	/* background: red; */
+	margin: 0 auto;
+	background: url('../img/0.png') no-repeat center;
+	background-size: cover;
+
+}
+.high{
+	width: 100%;
+	font-size:0.09rem; 
+	text-align: center;
+	/* margin-left:0.15rem; */
+}
+.low{
+	width: 100%;
+	font-size:0.09rem; 
+	text-align: center;
+	/* margin-left:0.15rem; */
+}
+
+
+.fengxiang{
+	width: 100%;
+	font-size:0.09rem;
+	text-align: center;
+}
+.level{
+	width: 100%;
+	font-size:0.09rem;
+	text-align: center;
+}
+.about{
+	width: 100%;
+	height:1.9rem;
+	/* background: red;  */
+	margin-top: 0.1rem;
+	border: 0.01rem solid #e6e6e6;
+	box-sizing: border-box;
+}
+.about li{
+	width: 25%;
+	height:0.94rem;
+	/* background:yellow;  */
+	float: left;
+	border-right: 0.01rem solid #e6e6e6;
+	border-bottom: 0.01rem solid #e6e6e6;
+	/* 解决第四个孩子去掉右边框还上不去 */
+	box-sizing: border-box;
+	display: flex;
+	 flex-direction: column;
+}
+.about li:nth-child(4n){
+	border-right: none;
+}
+/* 第四个元素后面所有的元素 */
+.about li:nth-child(4)~li{
+	border-bottom: none;
+}
+.about li img{
+	width: 0.18rem;
+	height: 0.2rem;
+	display: block;
+	margin-top: 0.11rem;
+	margin-left: 0.52rem;
+	/* margin: 0 auto; */
+	/* background-size: cover; */
+}
+.about li span{
+	font-size: 0.14rem;
+	text-align: center;
+	line-height: 0.2rem;
+	margin-top: 0.1rem;
+	color: #434343;
+}
+.about li h1{
+	font-size: 0.12rem;
+	text-align: center;
+	line-height: 0.18rem;
+	margin-top: 0.08rem;
+	color:#999999;
+}
+
+
+
+
+
+
+
+
+.location{
+	width: 100%;
+	/* 高度变为100%，就可以一直显示上面的 */
+	height: 100%;
+	background: #ffffff;
+	position: absolute;
+	left: 0;
+	top: 0;
+	/* 滚动条变为y轴 */
+	overflow-y:auto;
+	/* 让这个location消失 */
+	/* display: none; */
+}
+.serch{
+	width: 100%;
+	height:0.45rem; 
+	/* background: pink; */
+	border-bottom: 0.01rem solid #eeeeee;
+	padding-top:0.07rem; 
+	padding-left: 0.13rem;
+	box-sizing: border-box;
+	/* 固定定位 */
+	position: fixed;
+	top:0;
+	left:0;
+	/* 给他一个高度，让覆盖不了它 */
+	z-index: 999;
+	/* 给他一个背景色，不然滑动上去能看到search下面覆盖的字 */
+	background: #fff;
+
+	/* margin-top: 2.13rem; */
+}
+.serch-box{
+	width:4.7rem;
+	height: 0.3rem;
+	/* background: red; */
+	display: flex;
+
+}
+.left-box{
+	width:4.34rem;
+	height: 100%;
+	background: #f2f2f2;
+	display: flex;
+	border-radius: 0.15rem;
+	float: left; 
+}
+.sousuo{
+	width: 0.14rem;
+	height: 0.14rem;
+	background: red;
+	margin-top: 0.08rem;
+	margin-left: 0.1rem;
+	margin-right: 0.07rem;
+	background: url('../img/sousuo.png') no-repeat center;
+	background-size: cover;
+	float: left;
+}
+input{
+		width:4rem;
+		height: 100%;
+		background: #f2f2f2;
+		border: none; 
+		border-top-right-radius: 0.15rem;
+		border-bottom-right-radius: 0.15rem;
+}
+/* 去掉input点击的 黄线 */
+input:focus{
+	outline: none;
+}
+.right_box{
+	float: right;
+	margin-left: 0.05rem;
+	font-size: 0.14rem;
+	line-height: 0.3rem;
+	color: #434343;
+
+}
+.city_box{
+	width: 100%;
+	height:auto;
+	/* background: green; */
+	padding-top: 0.08rem;
+	padding-left: 0.13rem;
+	padding-right: 0.13rem;
+	/* 两种方法都行 */
+	/* padding: 0.08rem 0.13rem 0; */
+	box-sizing: border-box;
+	/* 为啥加这个 */
+	margin-top:0.45rem;
+
+}
+.city_box h1{
+	font-size: 0.16rem;
+	color:#434343;
+	line-height: 0.46rem;
+}
+.city_box ul{
+	width: 100%;
+	height: auto;
+	/* background: pink; */
+	display: flex;
+	flex-shrink: 0;
+	flex-wrap: wrap;
+	/* 浮动 */
+	/* overflow: hidden; */
+}
+.city_box ul li{
+	width: 1.52rem;
+	height: 0.32rem;
+	background: #f2f2f2;
+	margin-right: 0.09rem;
+	margin-bottom: 0.12rem;
+	border-radius: 0.16rem;
+	font-size: 0.16rem;
+	text-align: center;
+	line-height: 0.32rem;
+
+}
+.city_box ul li:nth-child(3n){
+	margin-right: 0;
+}
+
+
+ 
